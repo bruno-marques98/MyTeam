@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace MyTeam.Domain.Enums
 {
-    internal class ContractType
+    enum ContractType
     {
+        LongTerm,
+        ShortTerm,
+        Freelancer,
+        Outsource
     }
 }

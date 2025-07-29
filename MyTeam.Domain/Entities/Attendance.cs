@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace MyTeam.Domain.Entities
 {
-    internal class Attendance
+    public class Attendance
     {
+        public Guid Id { get; set; }
+        public Guid EmployeeId { get; set; }
+        public DateTime Date { get; set; }
+        public TimeSpan CheckIn { get; set; }
+        public TimeSpan? CheckOut { get; set; }
     }
 }

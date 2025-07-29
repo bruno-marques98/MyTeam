@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace MyTeam.Domain.Enums
 {
-    internal class LeaveStatus
+    enum LeaveStatus
     {
+        Away,
+        Present,
+        NotPresent,
+        NotEnrolled
     }
 }

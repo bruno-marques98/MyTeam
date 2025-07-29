@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace MyTeam.Domain.Enums
 {
-    internal class RoleType
+    enum RoleType
     {
+        Consultant,
+        TeamLeader,
+        Director,
+        CEO
     }
 }
