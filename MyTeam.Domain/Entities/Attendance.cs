@@ -10,8 +10,11 @@ namespace MyTeam.Domain.Entities
     {
         public Guid Id { get; set; }
         public Guid EmployeeId { get; set; }
-        public DateTime Date { get; set; }
+        public DateTime Date { get; set; } = DateTime.UtcNow;
         public TimeSpan CheckIn { get; set; }
         public TimeSpan? CheckOut { get; set; }
+
+        // Navigation Properties
+        public Employee? Employee { get; set; }
     }
 }

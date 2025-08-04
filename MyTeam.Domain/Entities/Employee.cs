@@ -1,20 +1,17 @@
 ﻿using MyTeam.Domain.Enums;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using MyTeam.Domain.ValueObjects;
 
 namespace MyTeam.Domain.Entities
 {
     public class Employee
     {
         public Guid Id { get; set; }
+        public Guid JobId { get; set; } // FK -> Job
 
         // Personal Info
         public string FullName { get; set; } = string.Empty;
-        public string Email { get; set; } = string.Empty;
-        public string PhoneNumber { get; set; } = string.Empty;
+        public required Email Email { get; set; }
+        public required PhoneNumber PhoneNumber { get; set; }
         public DateTime DateOfBirth { get; set; }
         public Gender Gender { get; set; }
 
@@ -29,6 +26,7 @@ namespace MyTeam.Domain.Entities
 
         // Navigation Properties
         public Department? Department { get; set; }
+        public Job? Job { get; set; }
         public ICollection<Attendance>? AttendanceRecords { get; set; }
         public ICollection<LeaveRequest>? LeaveRequests { get; set; }
 

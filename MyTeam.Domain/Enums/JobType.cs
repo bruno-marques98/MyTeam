@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace MyTeam.Domain.Enums
 {
-    enum JobType
+    public enum JobType
     {
-        Finance,
-        Consultant,
-        CEO,
-        Management,
-        Cleaning
+        FullTime,
+        PartTime,
+        Intern,
+        Contractor,
+        Temporary
     }
 }
