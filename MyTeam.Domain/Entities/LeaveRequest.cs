@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MyTeam.Domain.Entities
 {
-    internal class LeaveRequest
+    public class LeaveRequest
     {
     }
 }

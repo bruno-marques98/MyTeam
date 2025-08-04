@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MyTeam.Domain.Enums
 {
-    enum Gender
+    public enum Gender
     {
         Male,
         Female,
