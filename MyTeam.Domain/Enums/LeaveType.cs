@@ -1,7 +1,7 @@
 ﻿
 namespace MyTeam.Domain.Enums
 {
-    public enum LeaveStatus
+    public enum LeaveType
     {
         Approved,
         Rejected,
