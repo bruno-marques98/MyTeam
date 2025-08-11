@@ -1,12 +1,11 @@
 ﻿namespace MyTeam.Application.DTOs
 {
-    public class LeaveRequestDto
+    public class TrainingDto
     {
         public Guid Id { get; set; }
-        public Guid EmployeeId { get; set; }
+        public string Title { get; set; }
+        public string Description { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
-        public string Reason { get; set; }
-        public string Status { get; set; }
     }
 }

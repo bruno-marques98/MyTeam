@@ -1,12 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MyTeam.Application.DTOs
+﻿namespace MyTeam.Application.DTOs
 {
-    internal class EmployeeDTO
+    public class EmployeeDto
     {
+        public Guid Id { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string Email { get; set; }
+        public string PhoneNumber { get; set; }
+        public Guid DepartmentId { get; set; }
+        public Guid JobId { get; set; }
+        public DateTime HireDate { get; set; }
     }
 }
