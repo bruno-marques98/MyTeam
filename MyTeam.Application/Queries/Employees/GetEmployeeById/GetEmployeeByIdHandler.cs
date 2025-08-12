@@ -4,7 +4,7 @@ using MyTeam.Application.DTOs;
 using MyTeam.Application.Interfaces.Common;
 using Microsoft.EntityFrameworkCore;
 
-namespace MyTeam.Application.Queries.Employees
+namespace MyTeam.Application.Queries.Employees.GetEmployeeById
 {
     public class GetEmployeeByIdHandler : IRequestHandler<GetEmployeeByIdQuery, EmployeeDto>
     {
