@@ -27,9 +27,9 @@ namespace MyTeam.Domain.Entities
         // Navigation Properties
         public Department? Department { get; set; }
         public Job? Job { get; set; }
-        public ICollection<Attendance>? AttendanceRecords { get; set; }
+        public ICollection<Attendance>? Attendances { get; set; }
         public ICollection<LeaveRequest>? LeaveRequests { get; set; }
-
+        public ICollection<Payroll> Payrolls { get; set; }
         // Audit Info
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
         public DateTime UpdatedAt { get; set; }

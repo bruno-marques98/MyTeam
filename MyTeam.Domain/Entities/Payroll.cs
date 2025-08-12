@@ -1,30 +1,51 @@
 ﻿
 using MyTeam.Domain.ValueObjects;
+using System.ComponentModel.DataAnnotations;
 
 namespace MyTeam.Domain.Entities
 {
     public class Payroll
     {
-        public Guid Id { get; private set; }
-        public Guid EmployeeId { get; private set; }
-        public PayPeriod Period { get; private set; }
-        public Money GrossSalary { get; private set; }
-        public Money NetSalary { get; private set; }
+        public int Id { get; set; }
 
-        private Payroll() { } // EF Core
+        // Foreign key to Employee
+        public int EmployeeId { get; set; }
 
-        public Payroll(Guid employeeId, PayPeriod period, Money grossSalary, Money netSalary)
+        // Navigation property
+        public Employee Employee { get; set; }
+
+        // Payroll details
+        public decimal GrossSalary { get; set; }
+        public decimal NetSalary { get; private set; }
+        public decimal Deductions { get; set; }
+        public DateTime PaymentDate { get; set; }
+        public Payroll(int employeeId, decimal grossSalary, decimal deductions, DateTime paymentDate)
         {
-            Id = Guid.NewGuid();
             EmployeeId = employeeId;
-            Period = period ?? throw new ArgumentNullException(nameof(period));
-            GrossSalary = grossSalary ?? throw new ArgumentNullException(nameof(grossSalary));
-            NetSalary = netSalary ?? throw new ArgumentNullException(nameof(netSalary));
+            GrossSalary = grossSalary;
+            Deductions = deductions;
+            PaymentDate = paymentDate;
+
+            CalculateNetSalary();
         }
 
-        public void UpdateNetSalary(Money newNetSalary)
+        // EF Core needs a parameterless constructor
+        protected Payroll() { }
+
+        // Method to update Net Salary
+        public void UpdateNetSalary(decimal newGrossSalary, decimal newDeductions)
         {
-            NetSalary = newNetSalary ?? throw new ArgumentNullException(nameof(newNetSalary));
+            GrossSalary = newGrossSalary;
+            Deductions = newDeductions;
+            CalculateNetSalary();
+        }
+
+        // Private helper to calculate Net Salary
+        private void CalculateNetSalary()
+        {
+            NetSalary = GrossSalary - Deductions;
+            if (NetSalary < 0)
+                NetSalary = 0;
         }
     }
 }
