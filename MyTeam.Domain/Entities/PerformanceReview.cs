@@ -1,7 +1,7 @@
 ﻿
 namespace MyTeam.Domain.Entities
 {
-    internal class PerformanceReview
+    public class PerformanceReview
     {
         public Guid Id { get; private set; }
         public Guid EmployeeId { get; private set; }

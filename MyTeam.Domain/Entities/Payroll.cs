@@ -3,7 +3,7 @@ using MyTeam.Domain.ValueObjects;
 
 namespace MyTeam.Domain.Entities
 {
-    internal class Payroll
+    public class Payroll
     {
         public Guid Id { get; private set; }
         public Guid EmployeeId { get; private set; }

@@ -1,7 +1,7 @@
 ﻿
 namespace MyTeam.Domain.Entities
 {
-    internal class Training
+    public class Training
     {
         public Guid Id { get; private set; }
         public string Title { get; private set; }

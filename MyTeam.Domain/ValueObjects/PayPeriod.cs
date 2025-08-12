@@ -1,7 +1,7 @@
 ﻿
 namespace MyTeam.Domain.ValueObjects
 {
-    internal class PayPeriod
+    public class PayPeriod
     {
         public DateTime StartDate { get; private set; }
         public DateTime EndDate { get; private set; }
