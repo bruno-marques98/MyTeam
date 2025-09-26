@@ -18,11 +18,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Commands\Jobs\" />
     <Folder Include="Commands\Payroll\" />
     <Folder Include="Commands\PerformanceReviews\" />
     <Folder Include="Commands\Training\" />
-    <Folder Include="Queries\Jobs\" />
     <Folder Include="Queries\LeaveRequests\" />
     <Folder Include="Queries\PerformanceReviews\" />
     <Folder Include="Queries\Training\" />
