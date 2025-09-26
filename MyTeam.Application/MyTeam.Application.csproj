@@ -23,7 +23,6 @@
     <Folder Include="Commands\Payroll\" />
     <Folder Include="Commands\PerformanceReviews\" />
     <Folder Include="Commands\Training\" />
-    <Folder Include="Queries\Benefits\" />
     <Folder Include="Queries\Departments\" />
     <Folder Include="Queries\Jobs\" />
     <Folder Include="Queries\LeaveRequests\" />
