@@ -17,4 +17,18 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.8" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Commands\Departments\" />
+    <Folder Include="Commands\Jobs\" />
+    <Folder Include="Commands\Payroll\" />
+    <Folder Include="Commands\PerformanceReviews\" />
+    <Folder Include="Commands\Training\" />
+    <Folder Include="Queries\Benefits\" />
+    <Folder Include="Queries\Departments\" />
+    <Folder Include="Queries\Jobs\" />
+    <Folder Include="Queries\LeaveRequests\" />
+    <Folder Include="Queries\PerformanceReviews\" />
+    <Folder Include="Queries\Training\" />
+  </ItemGroup>
+
 </Project>

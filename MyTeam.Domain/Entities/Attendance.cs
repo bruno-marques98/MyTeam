@@ -1,10 +1,4 @@
-﻿using MyTeam.Domain.Enums;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace MyTeam.Domain.Entities
 {
     public class Attendance
@@ -14,13 +8,13 @@ namespace MyTeam.Domain.Entities
         public DateTime Date { get; private set; }
         public TimeSpan? CheckInTime { get; private set; }
         public TimeSpan? CheckOutTime { get; private set; }
-        public string Status { get; private set; } // Present, Absent, Late, etc.
+        public string Status { get; set; } // Present, Absent, Late, etc.
 
         // Navigation
         public Employee Employee { get; private set; }
 
         // Required by EF
-        private Attendance() { }
+        public Attendance() { }
 
         public Attendance(Guid employeeId, DateTime date, string status)
         {
