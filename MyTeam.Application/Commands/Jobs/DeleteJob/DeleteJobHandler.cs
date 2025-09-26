@@ -1,6 +1,6 @@
 ﻿using MediatR;
 using Microsoft.EntityFrameworkCore;
-using MyTeam.Application.Interfaces.Common;«
+using MyTeam.Application.Interfaces.Common;
 namespace MyTeam.Application.Commands.Jobs.DeleteJob
 {
     public class DeleteJobHandler : IRequestHandler<DeleteJobCommand, bool>
