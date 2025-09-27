@@ -21,7 +21,6 @@
     <Folder Include="Commands\Payroll\" />
     <Folder Include="Commands\PerformanceReviews\" />
     <Folder Include="Commands\Training\" />
-    <Folder Include="Queries\LeaveRequests\" />
     <Folder Include="Queries\PerformanceReviews\" />
     <Folder Include="Queries\Training\" />
   </ItemGroup>
