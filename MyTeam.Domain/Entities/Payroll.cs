@@ -1,51 +1,51 @@
-﻿
-using MyTeam.Domain.ValueObjects;
-using System.ComponentModel.DataAnnotations;
-
-namespace MyTeam.Domain.Entities
+﻿namespace MyTeam.Domain.Entities
 {
     public class Payroll
     {
-        public int Id { get; set; }
+        public Guid Id { get; private set; }
 
         // Foreign key to Employee
-        public int EmployeeId { get; set; }
+        public Guid EmployeeId { get; private set; }
 
         // Navigation property
-        public Employee Employee { get; set; }
+        public Employee Employee { get; private set; }
 
         // Payroll details
-        public decimal GrossSalary { get; set; }
-        public decimal NetSalary { get; private set; }
-        public decimal Deductions { get; set; }
-        public DateTime PaymentDate { get; set; }
-        public Payroll(int employeeId, decimal grossSalary, decimal deductions, DateTime paymentDate)
+        public decimal GrossPay { get; private set; }
+        public decimal NetPay { get; private set; }
+        public decimal Deductions { get; private set; }
+        public DateTime PayPeriodStart { get; private set; }
+        public DateTime PayPeriodEnd { get; private set; }
+
+        private Payroll() { } // EF Core
+
+        public Payroll(Guid employeeId, decimal grossPay, decimal deductions, DateTime payPeriodStart, DateTime payPeriodEnd)
         {
+            Id = Guid.NewGuid();
             EmployeeId = employeeId;
-            GrossSalary = grossSalary;
+            GrossPay = grossPay;
             Deductions = deductions;
-            PaymentDate = paymentDate;
+            PayPeriodStart = payPeriodStart;
+            PayPeriodEnd = payPeriodEnd;
 
-            CalculateNetSalary();
+            CalculateNetPay();
         }
 
-        // EF Core needs a parameterless constructor
-        protected Payroll() { }
-
-        // Method to update Net Salary
-        public void UpdateNetSalary(decimal newGrossSalary, decimal newDeductions)
+        public void UpdatePayroll(decimal newGrossPay, decimal newDeductions, DateTime newPayPeriodStart, DateTime newPayPeriodEnd)
         {
-            GrossSalary = newGrossSalary;
+            GrossPay = newGrossPay;
             Deductions = newDeductions;
-            CalculateNetSalary();
+            PayPeriodStart = newPayPeriodStart;
+            PayPeriodEnd = newPayPeriodEnd;
+
+            CalculateNetPay();
         }
 
-        // Private helper to calculate Net Salary
-        private void CalculateNetSalary()
+        private void CalculateNetPay()
         {
-            NetSalary = GrossSalary - Deductions;
-            if (NetSalary < 0)
-                NetSalary = 0;
+            NetPay = GrossPay - Deductions;
+            if (NetPay < 0)
+                NetPay = 0;
         }
     }
 }
