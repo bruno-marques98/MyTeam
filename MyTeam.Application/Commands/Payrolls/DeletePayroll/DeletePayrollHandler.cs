@@ -24,7 +24,7 @@ namespace MyTeam.Application.Commands.Payrolls.DeletePayroll
             _context.Payrolls.Remove(payroll);
             await _context.SaveChangesAsync(cancellationToken);
 
-            return Unit.Value; // ✅ matches IRequest<Unit>
+            return Unit.Value;
         }
     }
 }
