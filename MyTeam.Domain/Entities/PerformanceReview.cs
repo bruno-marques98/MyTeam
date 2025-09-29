@@ -1,5 +1,4 @@
-﻿
-namespace MyTeam.Domain.Entities
+﻿namespace MyTeam.Domain.Entities
 {
     public class PerformanceReview
     {
@@ -18,6 +17,14 @@ namespace MyTeam.Domain.Entities
             Id = Guid.NewGuid();
             Employee = employee;
             EmployeeId = employee.Id;
+            ReviewDate = reviewDate;
+            Reviewer = reviewer;
+            Comments = comments;
+            Rating = rating;
+        }
+
+        public void UpdateReview(DateTime reviewDate, string reviewer, string comments, int rating)
+        {
             ReviewDate = reviewDate;
             Reviewer = reviewer;
             Comments = comments;
