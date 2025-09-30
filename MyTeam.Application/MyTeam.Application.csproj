@@ -18,8 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Commands\Training\" />
-    <Folder Include="Queries\Training\" />
+    <Folder Include="Queries\Trainings\" />
   </ItemGroup>
 
 </Project>
